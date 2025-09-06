@@ -1,21 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-body{
-  margin:0; padding:0;
-  font-family:'Quicksand',sans-serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  min-height:100vh;
-  background:linear-gradient(135deg,#e0f7fa,#e8f5e9);
-  overflow:hidden;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-#hamburger{ position:absolute; top:20px; right:20px; font-size:2rem; cursor:pointer; z-index:100; }
-#menu{ display:none; position:absolute; top:60px; right:20px; background:#fff; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.2); padding:20px; z-index:99; width:200px; }
-canvas{ background:none; display:block; margin:20px auto; }
-#timerDisplay{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2.5rem; font-weight:600; color:#444; text-align:center; }
-.controls select, .controls input[type=range], .controls button{ margin:8px; padding:8px 12px; border-radius:5px; border:none; font-size:1rem; outline:none; }
-.controls button{ background:#6a5acd; color:#fff; cursor:pointer; transition:0.3s; }
-.controls button:hover{ background:#5b4bb7; }
-#quote{ margin-top:20px; font-style:italic; color:#555; max-width:300px; text-align:center; }
-@media(max-width:500px){ #timerDisplay{font-size:2rem;} canvas{width:200px;height:200px;} }
+
+.container {
+  text-align: center;
+}
+
+header {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #5e548e;
+}
+
+#menu-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav#menu {
+  display: none;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+nav#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav#menu li {
+  margin: 10px 0;
+}
+
+#themeCanvas {
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#timerDisplay {
+  font-size: 2rem;
+  margin: 15px 0;
+  color: #5e548e;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg,#a8dadc,#457b9d);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.controls button:hover {
+  transform: scale(1.05);
+}
+
+#quoteDisplay {
+  font-style: italic;
+  color: #6c757d;
+  margin-top: 15px;
+}
+
+/* Hamburger menu toggle */
+nav.show {
+  display: block;
+}
