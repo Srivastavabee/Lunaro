@@ -113,3 +113,39 @@ pauseBtn.addEventListener('click',pauseTimer);
 resetBtn.addEventListener('click',resetTimer);
 
 updateTimerDisplay(); drawTheme();
+function drawTheme(){
+  let progress=1-totalSeconds/(parseInt(workDurationInput.value)*60);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  switch(themeSelect.value){
+    case 'luna':
+      ctx.fillStyle='rgba(200,200,255,0.2)';
+      ctx.beginPath();
+      ctx.arc(125,125,100*progress,0,2*Math.PI);
+      ctx.fill();
+      ctx.fillStyle='#444';
+      ctx.beginPath();
+      ctx.arc(125,125,100,0,2*Math.PI*progress);
+      ctx.fill();
+      break;
+    case 'nature':
+      ctx.fillStyle='green';
+      ctx.fillRect(120,125,10,-100*progress);
+      ctx.fillStyle='pink';
+      ctx.beginPath();
+      ctx.arc(125,125-100*progress,25*progress,0,2*Math.PI);
+      ctx.fill();
+      break;
+    case 'dreamy':
+      ctx.fillStyle=`rgba(255,100,255,${progress})`;
+      ctx.beginPath();
+      ctx.arc(125,125,100*progress,0,2*Math.PI);
+      ctx.fill();
+      break;
+    case 'warm':
+      ctx.fillStyle=`rgba(255,150,50,${progress})`;
+      ctx.beginPath();
+      ctx.arc(125,125,100*progress,0,2*Math.PI);
+      ctx.fill();
+      break;
+  }
+}
