@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunaro - Mood Pomodoro Timer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hamburger">&#9776;</div>
+<div id="menu"><p><b>Lunaro Menu</b></p><p>Select Theme, Ambient & Noise</p></div>
+
+<canvas id="themeCanvas" width="250" height="250"></canvas>
+<div id="timerDisplay">25:00</div>
+
+<div class="controls">
+  <div>
+    <label>Work: <span id="workTime">25</span> min</label>
+    <input type="range" id="workDuration" min="5" max="60" value="25">
+  </div>
+  <div>
+    <label>Break: <span id="breakTime">5</span> min</label>
+    <input type="range" id="breakDuration" min="1" max="30" value="5">
+  </div>
+  <div>
+    <select id="themeSelect">
+      <option value="luna">Luna</option>
+      <option value="nature">Nature</option>
+      <option value="dreamy">Dreamy</option>
+      <option value="warm">Warm</option>
+    </select>
+    <select id="soundSelect">
+      <option value="rain">Rain</option>
+      <option value="water">Water</option>
+      <option value="fire">Fire</option>
+    </select>
+    <select id="noiseSelect">
+      <option value="white">White</option>
+      <option value="pink">Pink</option>
+      <option value="brown">Brown</option>
+    </select>
+  </div>
+  <div>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="resetBtn">Reset</button>
+  </div>
+</div>
+
+<div id="quote">Start your day with focus and clarity!</div>
+<audio id="ambientAudio" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
